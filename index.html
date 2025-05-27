@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Gineco-Pediátrica</title>
+  <style>
+    :root {
+      --primary-color: #f8e1f4;
+      --secondary-color: #e0cfff;
+      --text-color: #333;
+      --accent-color: #a97fc5;
+      --bg-color: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://github.com/Ang2809/clinica_imagenes/blob/main/Captura%20de%20pantalla%202025-05-27%20073006.png?raw=true') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-color);
+    }
+    header {
+      background-color: var(--bg-color);
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    header img {
+      max-width: 200px;
+      border-radius: 1rem;
+    }
+    .portada img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-bottom: 5px solid var(--accent-color);
+    }
+    section {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 1rem auto;
+      max-width: 800px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: var(--accent-color);
+    }
+    .accordion {
+      cursor: pointer;
+      background-color: var(--secondary-color);
+      border: none;
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: left;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    .accordion:hover {
+      background-color: var(--accent-color);
+      color: white;
+    }
+    .panel {
+      padding: 0 1rem;
+      display: none;
+      overflow: hidden;
+      background-color: var(--bg-color);
+      border-radius: 0 0 1rem 1rem;
+      margin-bottom: 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, select, textarea {
+      padding: 0.8rem;
+      border-radius: 1rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button[type="submit"] {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+    #mensaje-exito {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      background-color: #d4edda;
+      color: #155724;
+    }
+    @media (max-width: 600px) {
+      section {
+        padding: 1rem;
+        margin: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://github.com/Ang2809/clinica_imagenes/blob/main/Captura%20de%20pantalla%202025-05-27%20073210.png?raw=true" alt="Logo Clínica" />
+  </header>
+  <div class="portada">
+    <img src="https://github.com/Ang2809/clinica_imagenes/blob/main/Captura%20de%20pantalla%202024-11-11%20134321.png?raw=true" alt="Portada Clínica" />
+  </div>
+  <section>
+    <h2>¿Quiénes somos?</h2>
+    <p>Clínica enfocada en salud ginecológica, obstétrica y pediátrica. Brindamos atención con calidez, ética profesional y trato humano, especialmente a mujeres, infancias y familias.</p>
+    <h2>Misión</h2>
+    <p>Brindar atención médica especializada, accesible y con enfoque integral a mujeres, gestantes e infancias.</p>
+    <h2>Visión</h2>
+    <p>Ser un referente en salud femenina e infantil, por nuestra excelencia médica, cercanía y compromiso con la comunidad.</p>
+    <h2>Valores</h2>
+    <ul>
+      <li>Ética profesional</li>
+      <li>Empatía</li>
+      <li>Diversidad</li>
+      <li>Honestidad</li>
+      <li>Responsabilidad</li>
+      <li>Enfoque de género y niñez</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Especialidades</h2>
+    <button class="accordion">👩‍⚕️ Ginecología</button>
+    <div class="panel">
+      <p>Salud reproductiva, planificación familiar, anticoncepción, estudios Papanicolaou, chequeos ginecológicos.</p>
+    </div>
+    <button class="accordion">🧐 Obstetricia</button>
+    <div class="panel">
+      <p>Control prenatal, ultrasonidos, educación perinatal, atención en embarazo de bajo y alto riesgo.</p>
+    </div>
+    <button class="accordion">👶 Pediatría</button>
+    <div class="panel">
+      <p>Control del desarrollo infantil, vacunas, revisiones, prevención de enfermedades y orientación para madres/padres.</p>
+    </div>
+    <button class="accordion">🩺 Medicina General</button>
+    <div class="panel">
+      <p>Valoración inicial, seguimiento a condiciones generales de salud, chequeos básicos y canalización a especialidades.</p>
+    </div>
+  </section>
+  <section>
+    <h2>Agendar Cita</h2>
+    <form id="form-cita">
+      <input type="text" name="nombre" placeholder="Nombre completo" required />
+      <input type="tel" name="telefono" placeholder="Teléfono" required />
+      <input type="email" name="correo" placeholder="Correo electrónico" required />
+      <select name="sexo" required>
+        <option value="">Sexo</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Otro">Otro</option>
+      </select>
+      <select name="especialidad" required>
+        <option value="">Especialidad</option>
+        <option value="Ginecología">Ginecología</option>
+        <option value="Obstetricia">Obstetricia</option>
+        <option value="Pediatría">Pediatría</option>
+        <option value="Medicina General">Medicina General</option>
+      </select>
+      <input type="date" name="fecha" required />
+      <input type="time" name="hora" required />
+      <textarea name="comentarios" placeholder="Comentarios adicionales..."></textarea>
+      <button type="submit">Agendar cita</button>
+      <div id="mensaje-exito">
+        👍 Gracias, tu cita ha sido agendada.<br />
+        ⏳ Redirigiendo al inicio...<br />
+        🎉 Te contactaremos pronto.
+      </div>
+    </form>
+  </section>
+  <script>
+    // Acordeones
+    const acc = document.querySelectorAll('.accordion');
+    acc.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const panel = btn.nextElementSibling;
+        panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Envío de formulario a Google Sheets
+    const form = document.getElementById('form-cita');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch("https://script.google.com/macros/s/AKfycbwECmEmNGXeQ4GfJms1H5JMQlnMPOeFg9KpOsqNsKDmJLId-KibZlHyWEalKD3V70U1XQ/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.ok ? mostrarMensaje() : alert('Error al enviar'));
+    });
+
+    function mostrarMensaje() {
+      const msg = document.getElementById('mensaje-exito');
+      msg.style.display = 'block';
+      form.reset();
+      setTimeout(() => {
+        msg.style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
